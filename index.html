@@ -17,7 +17,7 @@
     "esri/Map",
     "esri/views/MapView",
     "esri/widgets/BasemapGallery",
-    "esri/widgets/Expand"
+    "esri/widgets/Expand",
     "esri/widgets/Locate"
   ], function(esriConfig, Map, MapView, BasemapGallery, Expand, Locate) {
     // Map implementation code 
@@ -59,7 +59,7 @@ const locateWidget = new Locate({
 
 // Add the widget to the top left corner of the UI
 view.ui.add(locateWidget, {
-  position: "top-left"
+  position: "bottom-left"
 });
 
 
