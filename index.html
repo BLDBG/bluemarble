@@ -32,12 +32,14 @@ const view = new MapView({
   container: "viewDiv" // ID of our body div
 });
 
-// Load the BasemapGallery widget module
-const BasemapGallery = await $arcgis.import("@arcgis/core/widgets/BasemapGallery.js");
-
-// Load the Expand widget module
-const Expand = await $arcgis.import("@arcgis/core/widgets/Expand.js");
-
+// Add a basemap gallery widget to the view
+let basemapGallery = new BasemapGallery({
+  view: view
+});
+// Add widget to the top right corner of the view
+view.ui.add(basemapGallery, {
+  position: "top-right"
+});
 
 });
 </script>
@@ -60,5 +62,7 @@ const Expand = await $arcgis.import("@arcgis/core/widgets/Expand.js");
 <!-- Create a zoom element for the ArcGIS API for JavaScript map view -->
 <div id="viewDiv"></div>
 
+<!-- Create a basemap gallery zoomelement for the ArcGIS API for JavaScript map view -->
+<div id="basemapGalleryDiv"></div>
 </body>
 </html>
